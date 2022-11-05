@@ -1,5 +1,5 @@
 /* GET news view */
-const travel = (req, res) => {
+const news = (req, res) => {
     res.render('news', {title: 'Travlr Getaways'});
 };
 module.exports = {

@@ -1,5 +1,5 @@
 /* GET contact view */
-const travel = (req, res) => {
+const contact = (req, res) => {
     res.render('contact', {title: 'Travlr Getaways'});
 };
 module.exports = {
