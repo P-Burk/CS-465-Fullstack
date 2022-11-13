@@ -1,25 +1,25 @@
 <div id="footer">
     <div>
         <ul class="navigation">
-            <li>
+            <li {{#if activeTabIndex}} class="active" {{/if}}>
                 <a href="index.html">Home</a>
             </li>
-            <li class="active"> {{!-- {{TODO: this is causing travel to always be selected}} --}}
+            <li {{#if activeTabTravel}} class="active" {{/if}}>
                 <a href="/travel">Travel</a>
             </li>
-            <li>
+            <li {{#if activeTabRooms}} class="active" {{/if}}>
                 <a href="/rooms">Rooms</a>
             </li>
-            <li>
+            <li {{#if activeTabMeals}} class="active" {{/if}}>
                 <a href="/meals">Meals</a>
             </li>
-            <li>
+            <li {{#if activeTabNews}} class="active" {{/if}}>
                 <a href="/news">News</a>
             </li>
-            <li>
+            <li {{#if activeTabAbout}} class="active" {{/if}}>
                 <a href="/about">About</a>
             </li>
-            <li>
+            <li {{#if activeTabContact}} class="active" {{/if}}>
                 <a href="/contact">Contact</a>
             </li>
         </ul>
