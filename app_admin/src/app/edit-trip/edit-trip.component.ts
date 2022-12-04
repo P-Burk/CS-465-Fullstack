@@ -33,13 +33,13 @@ export class EditTripComponent implements OnInit {
     this.editForm = this.formBuilder.group({
       _id: [],
       code: [tripCode, Validators.required],
-      name: ["", Validators.required],
-      length: ["", Validators.required],
-      start: ["", Validators.required],
-      resort: ["", Validators.required],
-      perPerson: ["", Validators.required],
-      image: ["", Validators.required],
-      description: ["", Validators.required]
+      name: ['', Validators.required],
+      length: ['', Validators.required],
+      start: ['', Validators.required],
+      resort: ['', Validators.required],
+      perPerson: ['', Validators.required],
+      image: ['', Validators.required],
+      description: ['', Validators.required]
     })
 
     this.tripService.getTrip(tripCode)
