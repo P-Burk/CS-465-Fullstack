@@ -1,11 +1,15 @@
 <div class="col-md-3">
   <h2 class="text-center">Edit Trip</h2>
     <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <!-- The trip code is read only because the update function relies on being able to 
+              search for the trip in the database by its code. If  you change the trip code
+              it will not update when you hit the submit/save button.-->
         <div class="form-group">
           <label>Code:</label>
           <input type="text" formControlName="code" 
             placeholder="Trip Code" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.code.errors }">
+            [ngClass]="{ 'is-invalid': submitted && f.code.errors }" readonly>  
           <div *ngIf="submitted && f.code.errors">
             <div *ngIf="f.code.errors.required">
               Trip Code is required
