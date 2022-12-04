@@ -45,7 +45,7 @@ export class EditTripComponent implements OnInit {
     this.tripService.getTrip(tripCode)
       .then(data => {
         console.log(data);
-        this.editForm.patchValue(data);
+        this.editForm.patchValue(data[0]);
       })
   }
 
