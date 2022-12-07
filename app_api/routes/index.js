@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const authController = require('../controllers/authentication')
+const jwt = require('express-jwt');
+const auth = jwt({
+    secret: process.env.JWT_SECRET,
+    userProperty: 'payload'
+});
+const authController = require('../controllers/authentication');
 const tripsController = require('../controllers/trips');
 
 router
@@ -14,12 +19,12 @@ router
 router
     .route('/trips')
     .get(tripsController.tripsList)
-    .post(tripsController.tripsAddTrip);
+    .post(auth, tripsController.tripsAddTrip);
 
 router
     .route('/trips/:tripCode')
     .get(tripsController.tripsFindCode)
-    .put(tripsController.tripsUpdateTrip)
-    .delete(tripsController.tripsDeleteTrip);
+    .put(auth, tripsController.tripsUpdateTrip)
+    .delete(auth, tripsController.tripsDeleteTrip);
 
 module.exports = router;
