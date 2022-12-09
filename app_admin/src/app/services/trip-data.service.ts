@@ -1,5 +1,4 @@
 import { Injectable, Inject } from '@angular/core';
-import { Http } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Trip } from '../models/trip';
@@ -82,10 +81,10 @@ export class TripDataService {
   }
 
   private getBearerToken() {
-    const httpOptions = {
+    const tokenHeader = {
       headers: new HttpHeaders({ 'Authorization': `Bearer ${this.storage.getItem('travlr-token')}` })
     };
-    return httpOptions;
+    return tokenHeader;
   }
 
   private handleError(error: any): Promise<any> {
