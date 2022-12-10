@@ -36,6 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './app_server/views')));
+//app.use(express.static(path.join(__dirname, 'public')));    //use this one if you want to use old html pages
 app.use(passport.initialize());
 
 //allow CORS
