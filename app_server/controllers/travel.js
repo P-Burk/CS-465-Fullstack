@@ -19,6 +19,7 @@ const renderTravelList = (req, res, responseBody) => {
         {
             title: pageTitle,
             trips: responseBody,
+            activeTabTravel: true,
             message
         }
     );
