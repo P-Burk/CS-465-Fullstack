@@ -35,7 +35,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, './app_server/views')));
 app.use(passport.initialize());
 
 //allow CORS
@@ -47,6 +47,7 @@ app.use('/api', (req, res, next) => {
 });
 
 app.use('/', indexRouter);
+app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 app.use('/travel', travelRouter);
 app.use('/about', aboutRouter);
